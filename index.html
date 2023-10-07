@@ -5,15 +5,34 @@
   <title>Hello!</title>
 </head>
 <body>
-  <h1>Hello!</h1>
-  <p>これはサンプルのコンテンツです。<br>
-  途中で改行表示もできます。</p>
-  <pre>
-    def func():
-        print("これはサンプルのリストです。")
-        print("&lt;pre&gt;タグで記述します。)
-  </pre>
-  <hr>
-  <p>間に仕切りを表示することもできます。</p>
+  <h1>Hello World!</h1>
+  <form>
+    <div>
+      <input type="text" size="40">
+    </div>
+    <div>
+      <textarea cols="30" rows="3">default text.</textarea>
+    </div>
+    <div>
+      <input type="checkbox" id="ch">
+      <label for="ch">Checkbox</label>
+    </div>
+    <div>
+      <input type="radio" name="r" id="rl">
+      <label for="rl">Radio botton A</label><br>
+      <input type="radio" name="r" id="r2">
+      <label for="r2">Radio button B</label>
+    </div>
+    <div>
+      <select size="3" multiple>
+        <option>項目1</option>
+        <option>項目2</option>
+        <option>項目3</option>
+      </select>
+    </div>
+    <div>
+      <input type="submit" value="Click">
+    </div>
+  </form>
 </body>
 </html>
