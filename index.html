@@ -8,24 +8,21 @@
 <body class="container">
   <h1>Hello World</h1>
   <p><script>
-  var jikan = 12;
-  var result = Math.floor(jikan / 6);
-  switch(result) {
-    case 0:
-      document.write('おやすみなさい' + jikan + '時は、深夜です。');
-      break;
-    case 1:
-      document.write('おはよう' + jikan + '時は、朝です。');
-      break;
-    case 2:
-      document.write('こんにちは。' + jikan + '時は、昼です。');
-      break;
-    case 3:
-      document.write('こんばんは' + jikan + '時は、夜です。');
-      break;
-      default:
-      document.write('?' + jikan + '時、ですか?')
+  var N = 50;
+  var num = 2;
+  var result = true;
+  while(num < N) {
+    if (N % num == 0) {
+        result = false;
+        break;
+    }
+    num ++;
   }
+    if(result) {
+       document.write(N + 'は、素数です。');
+    } else {
+        document.write(N + 'は、素数じゃないです。')
+    }
   </script></p>
 </body>
 </html>
