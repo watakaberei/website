@@ -8,21 +8,16 @@
 <body class="container">
   <h1>Hello World</h1>
   <p><script>
-  var N = 50;
-  var num = 2;
-  var result = true;
-  while(num < N) {
-    if (N % num == 0) {
-        result = false;
-        break;
-    }
-    num ++;
+  function calc(n) {
+      var total = 0;
+      for (var i = 1;i <= n;i++ ){
+          total += i;
+      }
+      return total;
   }
-    if(result) {
-       document.write(N + 'は、素数です。');
-    } else {
-        document.write(N + 'は、素数じゃないです。')
-    }
+  
+  var num = 200;
+  document.write(num + 'までの合計は、' + calc(num) + 'です。');
   </script></p>
 </body>
 </html>
