@@ -8,12 +8,24 @@
 <body class="container">
   <h1>Hello World</h1>
   <p><script>
-  var price = 123500;
-  var tax0 = 0.08;
-  var tax1 = 0.1;
-  document.write("金融:" + price + "<br>");
-  document.write("軽減税率適用:" + price * (1.0 + tax0) + "円<br>");
-  document.write("通常の税率:" + price * (1.0 + tax1) + "円<br>");
+  var jikan = 12;
+  var result = Math.floor(jikan / 6);
+  switch(result) {
+    case 0:
+      document.write('おやすみなさい' + jikan + '時は、深夜です。');
+      break;
+    case 1:
+      document.write('おはよう' + jikan + '時は、朝です。');
+      break;
+    case 2:
+      document.write('こんにちは。' + jikan + '時は、昼です。');
+      break;
+    case 3:
+      document.write('こんばんは' + jikan + '時は、夜です。');
+      break;
+      default:
+      document.write('?' + jikan + '時、ですか?')
+  }
   </script></p>
 </body>
 </html>
