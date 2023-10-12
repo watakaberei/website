@@ -8,14 +8,29 @@
 <body class="container">
   <h1>Hello World</h1>
   <p><script>
-  var arr = {'国語':98, '数学':76, '英語':54, '理科':78, '社会':90};
-  var total = 0;
-  for(var key in arr) {
-      total += arr[key];
-      document.write(key + ': ' + arr[key] + '<br>');
+  class Keisan {
+      constructor(date) {
+          this.date = date;
+      }
+      calc() {
+          var total = 0;
+          for(var n in this.date) {
+              total += this.date[n];
+          }
+          return total;
+      }
+      report() {
+          document.write('<div class="alert alert-info">');
+          document.write('Date: ' + this.date + '<br>');
+          document.write('total: ' + this.calc());
+          document.write('</div>');
+      }
   }
 
-  document.write('<p>合計は' + total + '、平均は、' + total / 5 + 'です。</p>')
+  var k1 = new Keisan([12, 34, 56, 78, 90]);
+  k1.report()
+  var k2 = new Keisan([109, 87, 65, 43, 21]);
+  k2.report()
 
   </script></p>
 </body>
