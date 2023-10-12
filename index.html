@@ -8,16 +8,15 @@
 <body class="container">
   <h1>Hello World</h1>
   <p><script>
-  function calc(n) {
-      var total = 0;
-      for (var i = 1;i <= n;i++ ){
-          total += i;
-      }
-      return total;
+  var arr = {'国語':98, '数学':76, '英語':54, '理科':78, '社会':90};
+  var total = 0;
+  for(var key in arr) {
+      total += arr[key];
+      document.write(key + ': ' + arr[key] + '<br>');
   }
-  
-  var num = 200;
-  document.write(num + 'までの合計は、' + calc(num) + 'です。');
+
+  document.write('<p>合計は' + total + '、平均は、' + total / 5 + 'です。</p>')
+
   </script></p>
 </body>
 </html>
