@@ -7,12 +7,15 @@
 </head>
 <body class="container">
   <h1>Hello World</h1>
-  <p id="msg">wait...</p>
+  <p onclick="action(event)">click me!</p>
   <script>
-    var p = document.querySelector('#msg')
-    setTimeout(function() {
-        p.textContent = 'これがDOM操作の威力だ!' ;
-    }, 3000);
+    var counter = 0;
+    
+    function action(event) {
+        counter++;
+        var dom = event.target;
+        dom.textContent = 'Count: ' + counter;
+    }
   </script>
 </body>
 </html>
