@@ -7,28 +7,35 @@
 </head>
 <body class="container">
   <h1>Hello World</h1>
-  <p id="msg">フォームを入力:</p>
+  <p id="msg">フォントサイズとフォント名を設定:</p>
   <div class="form-group">
-      <label for="f1">Name</label>
-      <input type="text" id="f1" class="form-control">
+      <label for="f1">Size</label>
+      <input type="range" id="f1" min="10" max="100"
+          class="form-control-range">
   </div>
   <div class="form-group">
-      <label for="f2">Password</label>
-      <input type="password" id="f2" class="form-control">
+      <label for="f2">Font Family</label>
+      <select id="f2" class="form-control">
+          <option>Serif</option>
+          <option>Sans-Serif</option>
+          <option>Monospace</option>
+      </select>
   </div>
   <div class="form-group">
       <button onclick="action(event)" class="btn btn-primary">
-          Click!
+        Click!
       </button>
   </div>
+  
   <script>
   function action(event) {
-      var f1 = document.querySelector("#f1");
-      var f2 = document.querySelector("#f2");
-      var result = "Your name:" + f1.value + '<br>'
-          + 'Password:(' + f2.value.length + 'chars)';
-      var msg = document.querySelector('#msg');
-      msg.innerHTML = result;
+     var f1 = document.querySelector("#f1")
+     var f2 = document.querySelector("#f2")
+     var msg = document.querySelector("#msg")
+     msg.style.fontFamily = f2.value;
+     msg.style.fontSize = f1.value + 'px';
+     var result = f2.value + '(' + f1.value + 'px)';
+     msg.innerHTML = result;
   }
   </script>
 </body>
