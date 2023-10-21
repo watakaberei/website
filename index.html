@@ -6,43 +6,33 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css" />
 </head>
 <body class="container">
-  <h1>Hello World</h1>
-  <p id="msg" class="h3 p-2">RGBの設定</p>
+  <h1>Hello!</h1>
+  <p id="msg">Select color!</p>
   <div class="form-group">
-      <label for="R">R</label>
-      <input type="range" id="R" min="0" max="225"
-          class="form-control-range" oninput="action()">
+      <label for="f2">Color</label>
+      <select id="list" class="form-control"
+          onclick="action(event)">
+          <option>-</option>
+          <option>primary</option>
+          <option>secondary</option>
+          <option>success</option>
+      </select>
   </div>
-  <div class="form-group">
-      <label for="G">G</label>
-      <input type="range" id="G" min="0" max="225"
-          class="form-control-range" oninput="action()">
-  </div>
-  <div class="form-group">
-      <label for="B">B</label>
-      <input type="range" id="B" min="0" max="225"
-          class="form-control-range" oninput="action()">
-  </div>
-
   <script>
-  function action() {
-      var R = document.querySelector('#R');
-      var G = document.querySelector('#G');
-      var B = document.querySelector('#B');
+  function action(event) {
+      var list = document.querySelector('#list');
       var msg = document.querySelector('#msg');
-      var color = R.value + ',' + G.value +
-          ',' + B.value;
-      msg.style.backgroundColor = 'rgb(' + color + ')';
-      var val = R.value*1 + G.value*1 + B.value*1;
-      if (val > 360) {
-           msg.style.color = 'black';
-      } else {
-          msg.style.color = 'white';
+      if (list.value == '-') {
+          msg.textContent = 'Select color!';
+          msg.className = '';
+          return
       }
-      msg.textContent = '[' + color + ']';
+      msg.className = '';
+      msg.classList.add('alert');
+      msg.classList.add('alert-' + list.value);
+      msg.textContent = 'アートカラーを　"' + list.value +
+          '" に変更しました'
   }
-
-  action();
   </script>
-</body>
+  </body>
 </html>
