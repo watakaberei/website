@@ -1,7 +1,20 @@
-var n = 12345;
-var total = 0;
-for (var i = 1;i <= n;i++) {
-     total += i;
+console.time('test')
+
+var result = [];
+for (let i = 2; i < 1000; i++) {
+  var num = 2;
+  var flg = true;
+  while(num < i) {
+      if (i % num == 0) {
+          flg = false;
+          break;
+      }
+      num++;
+  }
+  if (flg) {
+      result.push(i);
+  }
 }
 
-console.log('total: ' + total);
+console.log(result);
+console.timeEnd('test')
