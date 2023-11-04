@@ -6,6 +6,11 @@ exports.getline = function(msg) {
       output: process.stdout
   }); 
   
+  read.on('SIGINT', () => {
+      console.log(' \n*** finish ***');
+      read.close();
+  })
+  
   return new Promise((resolve, reject) => {
       read.question(msg, (answer) => {
           resolve(answer);
