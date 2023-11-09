@@ -1,10 +1,13 @@
-var data = {Tokyo:1230, Osaka:987, NewYork:456};
-console.table(data);
+const https = require('https');
 
-var data2 = {
-    Windows:{Tokyo:1230, Osaka:987, NewYork:456},
-    macOS:{Tokyo:543, Osaka:210, NewYork:789},
-    Linux:{Tokyo:98, Osaka:76, NewYork:54},
-};
+https.get('https://tuya-no.firebaseio.com/message.json', (res) => {
+    let body = '';
+    res.setEncoding('utf8');
+    res.on('data', (chunk) => {
+        body += chunk;
+    });
 
-console.table(data2);
+    res.on('end', (res) => {
+        console.log(body);
+    });
+})
