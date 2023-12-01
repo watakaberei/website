@@ -1,4 +1,5 @@
 const fs = require('fs');
 
-const f1 = fs.readFileSync('./index.html');
-console.log(f1.toString());
+fs.readFile('./index.html',(err, data) => {
+    console.log(data.toString());
+});
