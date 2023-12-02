@@ -1,5 +1,17 @@
 const fs = require('fs');
 
-fs.readFile('./index.html',(err, data) => {
+function getFile(fname){
+  return new Promise((resolve, reject) => {
+      fs.readFile(fname,(err, data) => {
+          resolve(data);
+      });
+  });
+}
+
+async function main() {
+    var data = await getFile('./index.html');
     console.log(data.toString());
-});
+}
+
+main()
+
